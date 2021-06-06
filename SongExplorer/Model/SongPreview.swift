@@ -13,16 +13,13 @@ struct SongPreview: Codable, Equatable, Identifiable, Hashable {
     }
     // certainly has some flaws but also I'm just trying to be able to search
     // for Kanye West
-    var censoredTitle: String {
-        get { return title.replacingOccurrences(of: "Nigg", with: "N***") }
-    }
+    var censoredTitle: String { return title.replacingOccurrences(of: "Nigg", with: "N***") }
     let title: String
     let artist: ArtistPreview
     // might want this to be a URL instead of String
     let image: String?
     let id: Int
-    
-    private enum CodingKeys : String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case id, title = "title_with_featured", artist = "primary_artist", image = "header_image_thumbnail_url"
     }
 }

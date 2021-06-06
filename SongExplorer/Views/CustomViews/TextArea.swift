@@ -35,4 +35,3 @@ struct TextArea_Previews: PreviewProvider {
         TextArea("Value", text: $val)
     }
 }
-

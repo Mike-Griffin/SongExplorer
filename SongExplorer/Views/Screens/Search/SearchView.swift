@@ -14,13 +14,14 @@ struct SearchView: View {
 
     }
     var body: some View {
-        VStack {
-            SearchBarView(searchText: $viewModel.searchText, isSearching: $viewModel.isSearching, placeholderText: "Search Music")
-            ForEach(viewModel.fetchedSongs) { song in
-                SongPreviewCell(songPreview: song)
-                    .padding(.vertical)
+        NavigationView {
+            VStack {
+                SearchBarView(searchText: $viewModel.searchText,
+                              isSearching: $viewModel.isSearching,
+                              placeholderText: "Search Music")
+                SongListView(songs: viewModel.fetchedSongs)
+                Spacer()
             }
-            Spacer()
         }
 
     }

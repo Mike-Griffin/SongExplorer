@@ -9,25 +9,28 @@ import SwiftUI
 
 struct SongPreviewCell: View {
     var songPreview: SongPreview
-    
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Text(songPreview.censoredTitle)
-                .font(.title).bold()
-                .lineLimit(2)
-                .minimumScaleFactor(0.75)
-            HStack {
-                Text("Artist: ")
-                Text(songPreview.artist.name)
+        HStack {
+            VStack(alignment: .leading, spacing: 16) {
+                Text(songPreview.censoredTitle)
+                    .font(.title).bold()
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.75)
+                HStack {
+                    Text("Artist: ")
+                    Text(songPreview.artist.name)
+                }
+                .font(.subheadline)
             }
-            .font(.subheadline)
+            .foregroundColor(.textColor)
+            .padding()
+            .frame(height: 80)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Color(.secondarySystemBackground))
+            .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+            .padding(.horizontal)
+            Spacer()
         }
-        .padding()
-        .frame(height: 80)
-        .frame(maxWidth: .infinity)
-        .background(Color.red)
-        .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-        .padding(.horizontal)
     }
 }
 
