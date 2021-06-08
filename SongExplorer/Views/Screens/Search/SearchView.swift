@@ -22,6 +22,7 @@ struct SearchView: View {
                 SongListView(songs: viewModel.fetchedSongs)
                 Spacer()
             }
+            .navigationTitle("Search")
         }
 
     }

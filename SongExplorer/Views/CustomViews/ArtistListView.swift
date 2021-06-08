@@ -14,7 +14,7 @@ struct ArtistListView: View {
             NavigationLink(
                 destination: ArtistDetailView(artist: artist),
             label: {
-                Text(artist.name.capitalized)
+                ArtistPreviewCell(artist: artist)
             })
                 .foregroundColor(.textColor)
         }

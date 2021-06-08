@@ -37,7 +37,6 @@ struct ArtistDetailView: View {
             .background(Color(.secondarySystemBackground)
                             .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous)))
             .padding(.horizontal)
-            
             VStack {
                 Text("Popular Songs")
                     .font(.title)

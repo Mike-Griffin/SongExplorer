@@ -17,7 +17,8 @@ struct Song: Codable {
     let producerArtists: [ArtistPreview]
     var censoredTitle: String { return title.replacingOccurrences(of: "Nigg", with: "N***") }
     private enum CodingKeys: String, CodingKey {
-        case artist = "primary_artist", featuredArtists = "featured_artists", writerArtists = "writer_artists", producerArtists = "producer_artists", id, title, album
+        case artist = "primary_artist", featuredArtists = "featured_artists", writerArtists = "writer_artists",
+             producerArtists = "producer_artists", id, title, album
     }
 }
 
