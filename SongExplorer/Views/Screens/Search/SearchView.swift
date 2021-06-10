@@ -16,10 +16,15 @@ struct SearchView: View {
     var body: some View {
         NavigationView {
             VStack {
-                SearchBarView(searchText: $viewModel.searchText,
+                if #available(iOS 15.0, *) {
+                    SongListView(songs: viewModel.fetchedSongs)
+                        .searchable(text: $viewModel.searchText)
+                } else {
+                    SearchBarView(searchText: $viewModel.searchText,
                               isSearching: $viewModel.isSearching,
                               placeholderText: "Search Music")
-                SongListView(songs: viewModel.fetchedSongs)
+                    SongListView(songs: viewModel.fetchedSongs)
+                }
                 Spacer()
             }
             .navigationTitle("Search")
