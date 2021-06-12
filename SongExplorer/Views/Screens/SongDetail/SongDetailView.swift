@@ -14,19 +14,8 @@ struct SongDetailView: View {
         ZStack {
             ScrollView {
                 VStack {
-                    ZStack {
-                        Color(.secondarySystemBackground)
-                            .frame(height: 130)
-                            .cornerRadius(12)
-                            .padding(.horizontal)
-                        VStack(alignment: .leading) {
-                            Text(viewModel.title)
-                            NavigationLink(song.artist.name, destination: ArtistDetailView(artist: song.artist))
-                            NavigationLink(viewModel.albumName, destination: AlbumDetailView(album: viewModel.album))
-                        }
-                        .songNameStyle()
-                    }
-                    .padding()
+                    SongHeaderView(title: viewModel.title, artist: song.artist)
+                    SongAdditionalDetailsView(album: viewModel.album)
                     RelatedArtistsView(artists: viewModel.featuredArtists, text: "Featured Artists")
                     RelatedArtistsView(artists: viewModel.writerArtists, text: "Writing Credits")
                     RelatedArtistsView(artists: viewModel.producerArtists, text: "Producing Credits")
@@ -55,9 +44,10 @@ struct RelatedArtistsView: View {
     var text: String
     var body: some View {
         if !artists.isEmpty {
-            VStack {
+            VStack(alignment: .leading) {
                 Text(text)
                     .font(.title)
+                    .padding(.leading)
                 ArtistListView(artists: artists)
             }
             .padding(.top)

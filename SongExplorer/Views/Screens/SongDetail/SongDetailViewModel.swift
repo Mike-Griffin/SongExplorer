@@ -14,7 +14,6 @@ final class SongDetailViewModel: ObservableObject {
             if let song = song {
                 self.title              = song.censoredTitle.capitalized
                 self.album              = song.album
-                self.albumName          = song.album.name.capitalized
                 self.featuredArtists    = song.featuredArtists
                 self.writerArtists      = song.writerArtists
                 self.producerArtists    = song.producerArtists

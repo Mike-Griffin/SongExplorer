@@ -16,13 +16,25 @@ struct ArtistDetailView: View {
             VStack(alignment: .leading) {
                 HStack(spacing: 16) {
                     if let urlString = artist.image {
-                        if let imageUrl = URL(string: urlString) {
-                            WebImage(url: imageUrl)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: .infinity)
-                                .frame(height: 84)
-                                .clipShape(Circle())
+                        if #available(iOS 15.0, *) {
+                            AsyncImage(url: URL(string: urlString)) { image in
+                                image.resizable()
+                            } placeholder: {
+                                Image(systemName: "person.circle")
+                            }
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 84)
+                            .clipShape(Circle())
+                        } else {
+                            if let imageUrl = URL(string: urlString) {
+                                WebImage(url: imageUrl)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth: .infinity)
+                                    .frame(height: 84)
+                                    .clipShape(Circle())
+                            }
                         }
                     }
                     Spacer()

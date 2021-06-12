@@ -23,12 +23,11 @@ struct SongPreviewCell: View {
                 .font(.subheadline)
             }
             .foregroundColor(.textColor)
-            .padding()
+            .padding(.horizontal)
             .frame(height: 80)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(Color(.secondarySystemBackground))
-            .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-            .padding(.horizontal)
+
             Spacer()
         }
     }
