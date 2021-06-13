@@ -11,7 +11,7 @@ import SwiftUI
 struct SongExplorerApp: App {
     var body: some Scene {
         WindowGroup {
-            SearchView()
+            AppTabView()
         }
     }
 }

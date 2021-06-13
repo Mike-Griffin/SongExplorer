@@ -9,28 +9,24 @@ import SwiftUI
 
 struct SearchView: View {
     @ObservedObject var viewModel = ViewModel()
-//    init(viewModel: ViewModel = .init()) {
-//        _viewModel = ObservedObject(wrappedValue: viewModel)
-//
-//    }
     var body: some View {
-        NavigationView {
+      NavigationView {
             VStack {
-                if #available(iOS 15.0, *) {
-                    SongListView(songs: viewModel.fetchedSongs)
-                        .searchable(text: $viewModel.searchText)
-                        .disableAutocorrection(true)
-                } else {
-                    SearchBarView(searchText: $viewModel.searchText,
-                              isSearching: $viewModel.isSearching,
-                              placeholderText: "Search Music")
-                    SongListView(songs: viewModel.fetchedSongs)
+                    if #available(iOS 15.0, *) {
+                        SongListView(songs: viewModel.fetchedSongs)
+                            .searchable(text: $viewModel.searchText)
+                            .disableAutocorrection(true)
+                    } else {
+                        SearchBarView(searchText: $viewModel.searchText,
+                                  isSearching: $viewModel.isSearching,
+                                  placeholderText: "Search Music")
+                        SongListView(songs: viewModel.fetchedSongs)
+                    }
+                    Spacer()
                 }
-                Spacer()
-            }
-            .navigationTitle("Search")
+                .navigationTitle("Search")
+            .navigationBarBackButtonHidden(true)
         }
-
     }
 }
 
