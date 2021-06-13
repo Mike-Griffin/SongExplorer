@@ -1,0 +1,2 @@
+My class NavigatableTabView is taken from a Github repo and made a few minor tweaks to it. Link to the code https://gist.github.com/Amzd/2eb5b941865e8c5cccf149e6e07c8810 this is a workaround from a known issue where SwiftUI will reset the navigation stack when switching between tabs. I wanted to maintain where the user is in the navigation stack and be able to clear that stack by pressing the Tab button again.
+ 
