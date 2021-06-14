@@ -12,6 +12,7 @@ struct AppTabView: View {
         NavigatableTabView {
             SearchView().tab(title: "Search", image: "magnifyingglass")
             FavoritesHomeView().tab(title: "Favorites", image: "star.circle")
+            Text("Shazam").tab(title: "Shazam", image: "shazam")
         }
     }
 }
