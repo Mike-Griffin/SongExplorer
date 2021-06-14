@@ -9,7 +9,29 @@ import SwiftUI
 
 struct FavoritesHomeView: View {
     var body: some View {
-        Text("Favorites will be here soon")
+        NavigationView {
+            List {
+                NavigationLink(destination: Text("Favorited Songs")) {
+                    Label("Songs", systemImage: "music.note")
+                        .font(.title2)
+                }
+                .padding(.vertical)
+                NavigationLink(destination: Text("Favorited Artists")) {
+                    Label("Artists", systemImage: "person.3.sequence")
+                        .font(.title2)
+
+                }
+                .padding(.vertical)
+                NavigationLink(destination: Text("Favorited Albums")) {
+                    Label("Albums", systemImage: "record.circle")
+                        .font(.title2)
+
+                }
+                .padding(.vertical)
+            }
+            .listStyle(InsetListStyle())
+            .navigationTitle("Your Favorites")
+        }
     }
 }
 
