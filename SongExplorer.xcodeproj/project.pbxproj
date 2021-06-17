@@ -25,6 +25,7 @@
 		7F3E6A6426670B6200D80238 /* ArtistDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E6A6326670B6200D80238 /* ArtistDetailView.swift */; };
 		7F61CAF9267550F600F8A7EB /* SongAdditionalDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F61CAF8267550F600F8A7EB /* SongAdditionalDetailsView.swift */; };
 		7F61CAFB2675546A00F8A7EB /* SongHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F61CAFA2675546A00F8A7EB /* SongHeaderView.swift */; };
+		7F6E0528267AFF640069E7AA /* ShazamHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E0527267AFF640069E7AA /* ShazamHomeView.swift */; };
 		7F72A43426757BA0008F6E21 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F72A43326757BA0008F6E21 /* Token.swift */; };
 		7F72A43626757C13008F6E21 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F72A43526757C13008F6E21 /* AppTabView.swift */; };
 		7F72A43926757C60008F6E21 /* FavoritesHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F72A43826757C60008F6E21 /* FavoritesHomeView.swift */; };
@@ -66,6 +67,7 @@
 		7F3E6A6326670B6200D80238 /* ArtistDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailView.swift; sourceTree = "<group>"; };
 		7F61CAF8267550F600F8A7EB /* SongAdditionalDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongAdditionalDetailsView.swift; sourceTree = "<group>"; };
 		7F61CAFA2675546A00F8A7EB /* SongHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongHeaderView.swift; sourceTree = "<group>"; };
+		7F6E0527267AFF640069E7AA /* ShazamHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamHomeView.swift; sourceTree = "<group>"; };
 		7F72A43326757BA0008F6E21 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		7F72A43526757C13008F6E21 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		7F72A43826757C60008F6E21 /* FavoritesHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesHomeView.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				7F3E6A6226670B4A00D80238 /* ArtistDetail */,
 				7FC9CB80266C0D0400A0A3DD /* AlbumDetail */,
 				7F72A43526757C13008F6E21 /* AppTabView.swift */,
+				7F6E0527267AFF640069E7AA /* ShazamHomeView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				7FC9CB94266D3BFB00A0A3DD /* ArtistPreviewCell.swift in Sources */,
 				7FF0B5B12646142600F6C846 /* SearchResult.swift in Sources */,
 				7F3767F02645F8390079E54D /* SearchBarView.swift in Sources */,
+				7F6E0528267AFF640069E7AA /* ShazamHomeView.swift in Sources */,
 				7FC9CB7D266C09A200A0A3DD /* SongDetailViewModel.swift in Sources */,
 				7FC9CB90266C476300A0A3DD /* ArtistDetailViewModel.swift in Sources */,
 				7F033DBA266F1C01002861CC /* GeniusManager.swift in Sources */,

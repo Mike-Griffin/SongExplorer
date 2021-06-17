@@ -17,6 +17,7 @@ final class SongDetailViewModel: ObservableObject {
                 self.featuredArtists    = song.featuredArtists
                 self.writerArtists      = song.writerArtists
                 self.producerArtists    = song.producerArtists
+                print(self.writerArtists)
             }
         }
     }

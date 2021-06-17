@@ -12,24 +12,27 @@ struct SongDetailView: View {
     @StateObject var viewModel = SongDetailViewModel()
     var body: some View {
         ZStack {
-            ScrollView {
+            //ScrollView {
                 VStack {
                     SongHeaderView(title: viewModel.title, artist: song.artist)
                     SongAdditionalDetailsView(album: viewModel.album)
-                    RelatedArtistsView(artists: viewModel.featuredArtists, text: "Featured Artists")
-                    RelatedArtistsView(artists: viewModel.writerArtists, text: "Writing Credits")
-                    RelatedArtistsView(artists: viewModel.producerArtists, text: "Producing Credits")
+                    List {
+                        RelatedArtistsView(artists: viewModel.featuredArtists, text: "Featured Artists")
+                        RelatedArtistsView(artists: viewModel.writerArtists, text: "Writing Credits")
+                        RelatedArtistsView(artists: viewModel.producerArtists, text: "Producing Credits")
+                    }
                     Spacer()
                 }
 
-            }
+            //}
             if viewModel.isLoading {
                 LoadingView()
             }
         }
         .onAppear {
             viewModel.getSong(id: song.id)
-    }
+            print(viewModel.writerArtists)
+        }
     }
 }
 
@@ -44,13 +47,7 @@ struct RelatedArtistsView: View {
     var text: String
     var body: some View {
         if !artists.isEmpty {
-            VStack(alignment: .leading) {
-                Text(text)
-                    .font(.title)
-                    .padding(.leading)
-                ArtistListView(artists: artists)
-            }
-            .padding(.top)
+                ArtistListView(artists: artists, headerText: text)
         }
     }
 }

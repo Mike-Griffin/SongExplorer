@@ -9,20 +9,24 @@ import SwiftUI
 
 struct ArtistListView: View {
     var artists: [ArtistPreview]
+    var headerText: String
     var body: some View {
-        ForEach(artists) { artist in
-            NavigationLink(
-                destination: ArtistDetailView(artist: artist),
-            label: {
-                ArtistPreviewCell(artist: artist)
-            })
-                .foregroundColor(.textColor)
+        Section(header: Text(headerText)) {
+            ForEach(artists) { artist in
+                NavigationLink(
+                    destination: ArtistDetailView(artist: artist),
+                label: {
+                    Text(artist.name.capitalized)
+                    //ArtistPreviewCell(artist: artist)
+                })
+                    .foregroundColor(.textColor)
+            }
         }
     }
 }
 
 struct ArtistListView_Previews: PreviewProvider {
     static var previews: some View {
-        ArtistListView(artists: [MockData.artistPreview])
+        ArtistListView(artists: [MockData.artistPreview], headerText: "Producers")
     }
 }
